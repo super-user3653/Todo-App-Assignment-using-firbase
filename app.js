@@ -1,4 +1,5 @@
 var list = document.getElementById("list");
+getfire()
 
 function addTodo(){
    var todo_item = document.getElementById("todo-item");
@@ -66,8 +67,31 @@ function getfire(){
         var keys = Object.keys(datar)
         for(var i = 0; i<keys.length; i++){
             var k = keys[i]
-            console.log(datar[k].name)
-        }
-    }
+
+var todo_item = document.getElementById("todo-item");
+var li = document.createElement('li');
+var litext = document.createTextNode(datar[k].name);
+var delBtn = document.createElement("button");
+var delText = document.createTextNode("DELETE");
+var editBtn = document.createElement("button");
+var aditText = document.createTextNode("EDIT");
+var litext2 = todo_item.value;
+li.appendChild(litext);
+delBtn.appendChild(delText);
+delBtn.setAttribute("class", "delbtn")
+delBtn.setAttribute("onclick", "deleteItem(this)")
+editBtn.appendChild(aditText);
+editBtn.setAttribute("class", "editbtn")
+editBtn.setAttribute("onclick", "editItem(this)")
+li.appendChild(delBtn);
+li.appendChild(editBtn);
+list.appendChild(li);
+
+delBtn.setAttribute("id", k)
+editBtn.setAttribute("id", k)
+
+}
+}
 )
+
 }
